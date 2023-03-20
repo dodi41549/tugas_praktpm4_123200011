@@ -7,9 +7,9 @@ class TourismPlace {
   String openTime;
   String ticketPrice;
   String imageAsset;
+  final String imageUrl;
   List<String> imageUrls;
 
-  var imageUrl;
 
   TourismPlace({
     required this.name,
@@ -18,6 +18,7 @@ class TourismPlace {
     required this.openDays,
     required this.openTime,
     required this.ticketPrice,
+    required this.imageUrl,
     required this.imageAsset,
     required this.imageUrls,
   });
@@ -25,7 +26,11 @@ class TourismPlace {
   String get getName => name;
   String get getLocation => location;
   String get getDescription => description;
-  String get getImageUrl => imageUrl;
+  String get getOpenDays => openDays;
+  String get getOpenTime => openTime;
+  String get getTicketPrice => ticketPrice;
+  String get getImageUrl => imageUrls[0];
+  List<String> get getImageUrls => imageUrls;
 }
 
 List<TourismPlace> tourismData = [
@@ -43,6 +48,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
+      imageUrl: '',
   ),
   TourismPlace(
     name: 'Observatorium Bosscha',
@@ -58,6 +64,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-p/0d/6a/88/9b/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-o/11/3f/04/39/p-20171111-110220-largejpg.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Jalan Asia Afrika',
@@ -73,6 +80,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-w/17/f4/44/01/jalan-asia-afrika.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-s/0a/ef/36/e2/jalan-asia-afrika.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Stone Garden',
@@ -88,6 +96,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-w/15/68/00/32/stone-garden-citatah.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-o/0d/a2/cb/05/stone-garden-citatah.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Taman Film Pasopati',
@@ -103,6 +112,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-o/17/67/d5/53/img-20190505-114509-largejpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-w/09/73/33/05/taman-film-pasopati.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Museum Geologi',
@@ -118,6 +128,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-o/11/a7/35/b7/geology-museum.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-s/1a/55/e0/dc/geology-museum.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Floating Market',
@@ -133,6 +144,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-p/1a/86/d3/cd/20200103-125059-largejpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-p/19/ce/b4/9b/img20181224120857-largejpg.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Kawah Putih',
@@ -148,6 +160,7 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-p/0b/35/30/14/white-crater.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-o/0a/8b/9a/79/2945-t00572-www-initempatwisat.jpg',
     ],
+    imageUrl: '',
   ),
   TourismPlace(
     name: 'Ranca Upas',
@@ -163,5 +176,6 @@ List<TourismPlace> tourismData = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/2f/87/ranca-upas.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/27/0a/ranca-upas.jpg',
     ],
+    imageUrl: '',
   ),
 ];
