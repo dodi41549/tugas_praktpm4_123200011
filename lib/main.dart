@@ -83,7 +83,7 @@ class DetailPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => InputPage(),
+                  builder: (context) => InputPage(place: place),
                 ),
               );
             },
@@ -96,6 +96,10 @@ class DetailPage extends StatelessWidget {
 }
 
 class InputPage extends StatefulWidget {
+  final TourismPlace place;
+
+  InputPage({required this.place});
+
   @override
   _InputPageState createState() => _InputPageState();
 }
@@ -144,11 +148,16 @@ class _InputPageState extends State<InputPage> {
               child: ElevatedButton(
                 onPressed : () {
                   _formKey.currentState!.save();
-                  final data = DestinationData(
+                  final data = TourismPlace(
                     name: _name,
                     location: _location,
                     description: _description,
                     imageUrl: _imageUrl,
+                    imageAsset: '',
+                    imageUrls: [],
+                    openDays: '',
+                    openTime: '',
+                    ticketPrice: '',
                   );
                   Navigator.pop(context, data);
                 },
@@ -160,18 +169,4 @@ class _InputPageState extends State<InputPage> {
       ),
     );
   }
-}
-
-class DestinationData {
-  String name;
-  String location;
-  String description;
-  String imageUrl;
-
-  DestinationData({
-    required this.name,
-    required this.location,
-    required this.description,
-    required this.imageUrl,
-  });
 }
